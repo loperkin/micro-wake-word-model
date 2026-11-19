@@ -2,7 +2,7 @@
 
 A small, English-language **“Hey Lucy”** wake-word model and its ESPHome-compatible manifest files, shared by [Purpose in Practice](https://pipbuilds.com/). A wake word is the phrase a voice assistant listens for before it starts processing a command. This repository provides **wake-word detection assets**, not a complete voice assistant.
 
-> **Project status:** Model and manifest files are published. This repository does **not** currently include training notebooks, training data, hardware-specific ESPHome configurations, benchmark results, or a documented end-to-end installation test. Do not interpret the included configuration values as independently measured accuracy.
+> **Project status: Completed / retired.** The creator tested **Hey Lucy** successfully and confirmed that it worked. Development has ended, and the files are preserved as a reference. Hardware details, test methodology, and quantitative performance benchmarks were not recorded here; no further testing or updates are planned.
 
 ## Repository files
 
@@ -63,11 +63,13 @@ micro_wake_word:
     - model: https://raw.githubusercontent.com/loperkin/micro-wake-word-model/main/hey_lucy.json
 ```
 
-This is **not** a complete flashable configuration. You still need a supported board, audio input, and the other required ESPHome components; use the official documentation for your specific hardware and ESPHome release. The model has not been independently validated on a named device in this repository.
+This is **not** a complete flashable configuration. You still need a supported board, audio input, and the other required ESPHome components; use the official documentation for your specific hardware and ESPHome release. The creator confirmed successful real-world testing, but the exact board, microphone, and ESPHome configuration are not documented here.
 
-## Testing checklist
+## Testing notes
 
-Before describing the model as production-ready, test and record:
+**Confirmed by the creator:** The wake word was tested and worked. The project is now retired, rather than awaiting further development. No numerical accuracy, latency, or false-trigger statistics have been published.
+
+For anyone reusing the files, these checks remain useful:
 
 - **Successful compilation and flashing:** ESPHome version, board, microphone, and configuration.
 - **True activations:** Speak “Hey Lucy” at multiple distances and in different rooms.
@@ -76,7 +78,7 @@ Before describing the model as production-ready, test and record:
 - **Real-world conditions:** Background noise, microphone placement, speakers, and different voices.
 - **Resource use:** Memory, stability, and response latency on the target device.
 
-The probability cutoff of `0.97` is a starting configuration value in the supplied manifest, **not** a documented success rate.
+The probability cutoff of `0.97` is a configuration value in the supplied manifest, **not** a documented success rate. This repository is retained for reference and is not an actively maintained project.
 
 ## Attribution and licensing
 
